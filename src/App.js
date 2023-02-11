@@ -1,29 +1,59 @@
-import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className='App'>
-      <header className='App-header'>
-        <img
-          src={logo}
-          className='App-logo'
-          alt='logo'
-        />
-        <p>
-          Edit <code>src/App.js</code> and Save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    count: 0,
+    posts: [
+      {
+        id: 1,
+        name: 'Thamyris cabral',
+        count: 0,
+      },
+      {
+        id: 2,
+        name: 'Thamyris cabral',
+        count: 0,
+      },
+      {
+        id: 3,
+        name: 'Thamyris cabral',
+        count: 0,
+      },
+    ],
+  };
+
+  componentDidUpdate() {
+    this.componentDidMount();
+  }
+
+  componentDidMount() {
+    const { count } = this.state;
+
+    setTimeout(() => {
+      this.setState({ count: count + 1 });
+    }, 1000);
+  }
+
+  render() {
+    const { posts, count } = this.state;
+    return (
+      <div className='App'>
+        <h1>{`Contagem: ${count}`}</h1>
+        <div>
+          {posts.map((post) => (
+            <div key={post.id}>
+              <p>{`Id:  ${post.id} ${post.name}`}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
 }
+
+// function App() {
+//
+// }
 
 export default App;
