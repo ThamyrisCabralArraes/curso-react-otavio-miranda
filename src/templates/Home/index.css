@@ -56,3 +56,8 @@
   background-color: rgba(128, 255, 0, 0.584);
   color: black;
 }
+
+.input-search {
+  margin: 20px;
+  padding: 5px;
+}
