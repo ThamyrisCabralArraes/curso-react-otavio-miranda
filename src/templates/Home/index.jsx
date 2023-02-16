@@ -46,6 +46,11 @@ class Home extends Component {
   render() {
     const { posts, page, postsPerPage, allPosts, searchValue } = this.state;
     const disabledPosts = page + postsPerPage >= allPosts.length;
+    const filterPosts = !!searchValue
+      ? allPosts.filter((post) =>
+          post.title.toLowerCase().includes(searchValue.toLocaleLowerCase()),
+        )
+      : posts;
 
     return (
       <section className='container'>
@@ -60,7 +65,7 @@ class Home extends Component {
           onChange={this.handleChange}
           value={searchValue}
         />
-        <Posts posts={posts} />
+        <Posts posts={filterPosts} />
         <Button
           text={'Load more Posts'}
           onClick={this.loadMorePosts}
