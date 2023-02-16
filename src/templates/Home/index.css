@@ -58,6 +58,8 @@
 }
 
 .input-search {
-  margin: 20px;
-  padding: 5px;
+  margin: 30px;
+  padding: 8px;
+  border: 1px solid #3333335b;
+  border-radius: 3px;
 }

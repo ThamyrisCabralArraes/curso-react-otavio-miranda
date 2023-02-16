@@ -4,6 +4,7 @@ import { Component } from 'react';
 import { loadPost } from '../../utils/load-posts';
 import { Posts } from '../../Posts/Index';
 import { Button } from '../../components/Button';
+import { TextInput } from '../../components/TextInput';
 
 class Home extends Component {
   state = {
@@ -54,16 +55,9 @@ class Home extends Component {
 
     return (
       <section className='container'>
-        {!!searchValue && (
-          <div>
-            <h1> Search: {searchValue}</h1>
-          </div>
-        )}
-        <input
-          className='input-search'
-          type='search'
-          onChange={this.handleChange}
-          value={searchValue}
+        <TextInput
+          searchValue={searchValue}
+          handleChange={this.handleChange}
         />
         <Posts posts={filterPosts} />
         <Button
