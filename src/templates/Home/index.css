@@ -1,0 +1,58 @@
+.post-card {
+  padding: 30px;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  background: #eee;
+  padding: 30px;
+}
+
+.post {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 100ms ease-in-out;
+}
+
+.post:hover {
+  transform: scale(1.05);
+}
+
+.post img {
+  max-width: 100%;
+}
+
+.button-next-page {
+  width: 150px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(69, 69, 218);
+  padding: 10px;
+  color: #eee;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.button-next-page:disabled {
+  background-color: #888;
+  color: black;
+}
+
+.button-next-page:disabled:hover {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.button-next-page:hover {
+  background-color: rgba(128, 255, 0, 0.584);
+  color: black;
+}
