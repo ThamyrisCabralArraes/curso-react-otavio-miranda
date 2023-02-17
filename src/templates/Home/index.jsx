@@ -60,6 +60,7 @@ class Home extends Component {
           handleChange={this.handleChange}
         />
         <Posts posts={filterPosts} />
+
         <Button
           text={'Load more Posts'}
           onClick={this.loadMorePosts}
