@@ -9,7 +9,12 @@ describe('<PostCard />', () => {
     render(<PostCard {...props} />);
 
     expect(screen.getByAltText(/title/i)).toHaveAttribute('src', 'img/img.png');
-    expect(screen.getByRole('heading', { name: /title/i, level: 2 })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /Title/i, level: 2 })).toBeInTheDocument();
     expect(screen.getByText('body1')).toBeInTheDocument();
   });
+
+  // it('should match snapshot', () => {
+  //   const { container } = render(<PostCard {...props} />);
+  //   expect(container.firstChild).toMatchSnapshot();
+  // });
 });
